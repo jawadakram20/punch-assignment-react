@@ -16,43 +16,44 @@ import {
   LOAD_JS_QUESTIONS,
   LOAD_JS_QUESTIONS_SUCCESS,
   LOAD_C_QUESTIONS_SUCCESS,
-  LOAD_RUBY_QUESTIONS,
-  LOAD_RUBY_QUESTIONS_SUCCESS,
+  LOAD_KANNADA_QUESTIONS,
+  LOAD_KANNADA_QUESTIONS_SUCCESS,
   LOAD_C_QUESTIONS,
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  jsQuestionsCount: '',
+  jsQuestions: {},
+  kannadaQuestions: {},
+  cQuestions: {}
 });
 
 function homeReducer(state = initialState, action) {
-  console.log(action.type)
   switch (action.type) {
     case LOAD_JS_QUESTIONS:
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['jsQuestionsCount'], 0);
+        .setIn(['jsQuestions'], {});
     case LOAD_JS_QUESTIONS_SUCCESS:
       return state
-        .setIn(['jsQuestionsCount'], action.quesCount)
+        .setIn(['jsQuestions'], action.questions)
     case LOAD_C_QUESTIONS:
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['cQuestionsCount'], 0);
+        .setIn(['cQuestions'], {});
     case LOAD_C_QUESTIONS_SUCCESS:
       return state
-        .setIn(['cQuestionsCount'], action.quesCount)
-    case LOAD_RUBY_QUESTIONS:
+        .setIn(['cQuestions'], action.questions)
+    case LOAD_KANNADA_QUESTIONS:
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['rubyQuestionsCount'], 0);
-    case LOAD_RUBY_QUESTIONS_SUCCESS:
+        .setIn(['kannadaQuestions'], {});
+    case LOAD_KANNADA_QUESTIONS_SUCCESS:
       return state
-        .setIn(['rubyQuestionsCount'], action.quesCount)
+        .setIn(['kannadaQuestions'], action.questions)
     case LOAD_ERROR:
       return state
         .set('error', action.error)

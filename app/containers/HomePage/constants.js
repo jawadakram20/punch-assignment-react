@@ -8,8 +8,8 @@
 * Follow this format:
 * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
 */
-export const LOAD_RUBY_QUESTIONS = 'boilerplate/App/LOAD_RUBY_QUESTIONS';
-export const LOAD_RUBY_QUESTIONS_SUCCESS = 'boilerplate/App/LOAD_RUBY_QUESTIONS_SUCCESS';
+export const LOAD_KANNADA_QUESTIONS = 'boilerplate/App/LOAD_KANNADA_QUESTIONS';
+export const LOAD_KANNADA_QUESTIONS_SUCCESS = 'boilerplate/App/LOAD_KANNADA_QUESTIONS_SUCCESS';
 export const LOAD_C_QUESTIONS = 'boilerplate/App/LOAD_C_QUESTIONS';
 export const LOAD_C_QUESTIONS_SUCCESS = 'boilerplate/App/LOAD_C_QUESTIONS_SUCCESS';
 export const LOAD_QUESTIONS = 'boilerplate/App/LOAD_QUESTIONS';

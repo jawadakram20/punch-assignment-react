@@ -8,17 +8,17 @@ const selectHome = (state) => state.get('home');
 
 const makeSelectJsQuestions = () => createSelector(
   selectHome,
-  (homeState) => homeState.get('jsQuestionsCount')
+  (homeState) => homeState.get('jsQuestions')
 );
 
 const makeSelectCQuestions = () => createSelector(
   selectHome,
-  (homeState) => homeState.get('cQuestionsCount')
+  (homeState) => homeState.get('cQuestions')
 );
 
-const makeSelectRubyQuestions = () => createSelector(
+const makeSelectKannadaQuestions = () => createSelector(
   selectHome,
-  (homeState) => homeState.get('rubyQuestionsCount')
+  (homeState) => homeState.get('kannadaQuestions')
 );
 
 const makeSelectError = () => createSelector(
@@ -30,6 +30,6 @@ export {
   selectHome,
   makeSelectCQuestions,
   makeSelectJsQuestions,
-  makeSelectRubyQuestions,
+  makeSelectKannadaQuestions,
   makeSelectError
 };

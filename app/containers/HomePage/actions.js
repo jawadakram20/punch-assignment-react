@@ -3,8 +3,8 @@ import {
   LOAD_ERROR,
   LOAD_JS_QUESTIONS,
   LOAD_C_QUESTIONS,
-  LOAD_RUBY_QUESTIONS,
-  LOAD_RUBY_QUESTIONS_SUCCESS,
+  LOAD_KANNADA_QUESTIONS,
+  LOAD_KANNADA_QUESTIONS_SUCCESS,
   LOAD_C_QUESTIONS_SUCCESS,
 } from './constants';
 
@@ -14,10 +14,10 @@ export function loadJsQuestions() {
   };
 }
 
-export function jsQuestionsLoaded(quesCount) {
+export function jsQuestionsLoaded(questions) {
   return {
     type: LOAD_JS_QUESTIONS_SUCCESS,
-    quesCount,
+    questions,
   };
 }
 
@@ -27,23 +27,23 @@ export function loadCQuestions() {
   };
 }
 
-export function CQuestionsLoaded(quesCount) {
+export function CQuestionsLoaded(questions) {
   return {
     type: LOAD_C_QUESTIONS_SUCCESS,
-    quesCount,
+    questions,
   };
 }
 
-export function loadRubyQuestions() {
+export function loadKannadaQuestions() {
   return {
-    type: LOAD_RUBY_QUESTIONS,
+    type: LOAD_KANNADA_QUESTIONS,
   };
 }
 
-export function rubyQuestionsLoaded(quesCount) {
+export function kannadaQuestionsLoaded(questions) {
   return {
-    type: LOAD_RUBY_QUESTIONS_SUCCESS,
-    quesCount,
+    type: LOAD_KANNADA_QUESTIONS_SUCCESS,
+    questions,
   };
 }
 
