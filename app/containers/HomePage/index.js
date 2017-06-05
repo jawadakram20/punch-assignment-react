@@ -24,7 +24,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       error,
       repos,
     };
-    console.log(this.props)
 
     return (
       <Table striped bordered condensed hover>
