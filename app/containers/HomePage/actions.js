@@ -1,34 +1,55 @@
-/*
- * Home Actions
- *
- * Actions change things in your application
- * Since this boilerplate uses a uni-directional data flow, specifically redux,
- * we have these actions which are the only way your application interacts with
- * your application state. This guarantees that your state is up to date and nobody
- * messes it up weirdly somewhere.
- *
- * To add a new Action:
- * 1) Import your constant
- * 2) Add a function like this:
- *    export function yourAction(var) {
- *        return { type: YOUR_ACTION_CONSTANT, var: var }
- *    }
- */
-
 import {
-  CHANGE_USERNAME,
+  LOAD_JS_QUESTIONS_SUCCESS,
+  LOAD_ERROR,
+  LOAD_JS_QUESTIONS,
+  LOAD_C_QUESTIONS,
+  LOAD_RUBY_QUESTIONS,
+  LOAD_RUBY_QUESTIONS_SUCCESS,
+  LOAD_C_QUESTIONS_SUCCESS,
 } from './constants';
 
-/**
- * Changes the input field of the form
- *
- * @param  {name} name The new text of the input field
- *
- * @return {object}    An action object with a type of CHANGE_USERNAME
- */
-export function changeUsername(name) {
+export function loadJsQuestions() {
   return {
-    type: CHANGE_USERNAME,
-    name,
+    type: LOAD_JS_QUESTIONS,
+  };
+}
+
+export function jsQuestionsLoaded(quesCount) {
+  return {
+    type: LOAD_JS_QUESTIONS_SUCCESS,
+    quesCount,
+  };
+}
+
+export function loadCQuestions() {
+  return {
+    type: LOAD_C_QUESTIONS,
+  };
+}
+
+export function CQuestionsLoaded(quesCount) {
+  return {
+    type: LOAD_C_QUESTIONS_SUCCESS,
+    quesCount,
+  };
+}
+
+export function loadRubyQuestions() {
+  return {
+    type: LOAD_RUBY_QUESTIONS,
+  };
+}
+
+export function rubyQuestionsLoaded(quesCount) {
+  return {
+    type: LOAD_RUBY_QUESTIONS_SUCCESS,
+    quesCount,
+  };
+}
+
+export function QuestionsLoadingError(error) {
+  return {
+    type: LOAD_ERROR,
+    error,
   };
 }

@@ -12,21 +12,51 @@
 import { fromJS } from 'immutable';
 
 import {
-  CHANGE_USERNAME,
+  LOAD_ERROR,
+  LOAD_JS_QUESTIONS,
+  LOAD_JS_QUESTIONS_SUCCESS,
+  LOAD_C_QUESTIONS_SUCCESS,
+  LOAD_RUBY_QUESTIONS,
+  LOAD_RUBY_QUESTIONS_SUCCESS,
+  LOAD_C_QUESTIONS,
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  username: '',
+  jsQuestionsCount: '',
 });
 
 function homeReducer(state = initialState, action) {
+  console.log(action.type)
   switch (action.type) {
-    case CHANGE_USERNAME:
-
-      // Delete prefixed '@' from the github username
+    case LOAD_JS_QUESTIONS:
       return state
-        .set('username', action.name.replace(/@/gi, ''));
+        .set('loading', true)
+        .set('error', false)
+        .setIn(['jsQuestionsCount'], 0);
+    case LOAD_JS_QUESTIONS_SUCCESS:
+      return state
+        .setIn(['jsQuestionsCount'], action.quesCount)
+    case LOAD_C_QUESTIONS:
+      return state
+        .set('loading', true)
+        .set('error', false)
+        .setIn(['cQuestionsCount'], 0);
+    case LOAD_C_QUESTIONS_SUCCESS:
+      return state
+        .setIn(['cQuestionsCount'], action.quesCount)
+    case LOAD_RUBY_QUESTIONS:
+      return state
+        .set('loading', true)
+        .set('error', false)
+        .setIn(['rubyQuestionsCount'], 0);
+    case LOAD_RUBY_QUESTIONS_SUCCESS:
+      return state
+        .setIn(['rubyQuestionsCount'], action.quesCount)
+    case LOAD_ERROR:
+      return state
+        .set('error', action.error)
+        .set('loading', false);
     default:
       return state;
   }
